@@ -9,6 +9,8 @@ document.getElementById("w-change-btn").addEventListener("click", (e) => {
 
   weather.changeLocation(city);
 
+  document.getElementById("city").value = "";
+
   getWeather();
 });
 
