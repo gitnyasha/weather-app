@@ -8,23 +8,15 @@ class Dom {
     this.humidity = document.getElementById('w-humidity');
   }
 
-  changeToC(celsius) {
-    return Math.floor(celsius);
-  }
-
-  changeToF(fahrenheit) {
-    return Math.floor((fahrenheit * 9) / 5 + 32);
-  }
-
   show(weather) {
     this.location.textContent = weather.location.name;
-    this.tempc.innerHTML = `${this.changeToC(weather.current.temperature)}&deg`;
-    this.tempf.innerHTML = `${this.changeToF(weather.current.temperature)}&deg`;
-    this.desc.textContent = weather.current.weather_descriptions[0];
+    this.tempc.innerHTML = `${Math.floor(weather.current.temperature)}&deg`;
+    this.tempf.innerHTML = `${Math.floor((weather.current.temperature * 9) / 5 + 32)}&deg`;
+    this.desc.innerHTML = `${weather.current.weather_descriptions[0]}`;
     this.icon.setAttribute('src', `${weather.current.weather_icons[0]}`);
     this.humidity.innerHTML = `Humidity: ${weather.current.humidity}<span>%</span>`;
     document.getElementById('w-temp-f').style.display = 'none';
-    document.getElementById('toggle').addEventListener('click', function () {
+    document.getElementById('toggle').addEventListener('click', () => {
       if (document.getElementById('switch').innerHTML === 'Celsius') {
         document.getElementById('switch').innerHTML = 'Fahrenheit';
         document.getElementById('w-temp-c').style.display = 'none';

@@ -10,7 +10,6 @@ function getWeather() {
   weather.getWeather().then((results) => {
     dom.show(results);
   })
-    .catch((err));
 }
 
 document.getElementById('w-change-btn').addEventListener('click', (e) => {
