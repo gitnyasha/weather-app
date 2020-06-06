@@ -1,1 +1,125 @@
-!function (e) { var t = {}; function r(n) { if (t[n]) return t[n].exports; var o = t[n] = { i: n, l: !1, exports: {} }; return e[n].call(o.exports, o, o.exports, r), o.l = !0, o.exports } r.m = e, r.c = t, r.d = function (e, t, n) { r.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: n }) }, r.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, r.t = function (e, t) { if (1 & t && (e = r(e)), 8 & t) return e; if (4 & t && "object" == typeof e && e && e.__esModule) return e; var n = Object.create(null); if (r.r(n), Object.defineProperty(n, "default", { enumerable: !0, value: e }), 2 & t && "string" != typeof e) for (var o in e) r.d(n, o, function (t) { return e[t] }.bind(null, o)); return n }, r.n = function (e) { var t = e && e.__esModule ? function () { return e.default } : function () { return e }; return r.d(t, "a", t), t }, r.o = function (e, t) { return Object.prototype.hasOwnProperty.call(e, t) }, r.p = "", r(r.s = 0) }([function (e, t) { console.log("Hello world") }]); 
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weather */ \"./src/weather.js\");\n/* harmony import */ var _views__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views */ \"./src/views.js\");\n\n\n\nconst weather = new _weather__WEBPACK_IMPORTED_MODULE_0__[\"Weather\"](\"Harare\");\nconst dom = new _views__WEBPACK_IMPORTED_MODULE_1__[\"Dom\"]();\n\ndocument.addEventListener(\"DOMContentLoaded\", getWeather);\n\nfunction getWeather() {\n  weather\n    .getWeather()\n    .then((results) => {\n      console.log(results);\n      dom.show(results);\n    })\n    .catch((err) => console.log(err));\n}\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/views.js":
+/*!**********************!*\
+  !*** ./src/views.js ***!
+  \**********************/
+/*! exports provided: Dom */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Dom\", function() { return Dom; });\nclass Dom {\n  constructor() {\n    this.location = document.getElementById(\"w-location\");\n    this.desc = document.getElementById(\"w-desc\");\n    this.tempc = document.getElementById(\"w-temp-c\");\n    this.tempf = document.getElementById(\"w-temp-f\");\n    this.icon = document.getElementById(\"w-icon\");\n    this.humidity = document.getElementById(\"w-humidity\");\n    this.wind = document.getElementById(\"w-wind\");\n  }\n\n  changeToC(celsius) {\n    return Math.floor(celsius);\n  }\n\n  changeToF(fahrenheit) {\n    return Math.floor((fahrenheit * 9) / 5 + 32);\n  }\n\n  show(weather) {\n    this.location.textContent = weather.location.name;\n    this.tempc.innerHTML = `${this.changeToC(weather.current.temperature)}&deg`;\n    this.tempf.innerHTML = `${this.changeToF(weather.current.temperature)}&deg`;\n    this.desc.textContent = weather.current.weather_descriptions[0];\n    this.icon.setAttribute(\"src\", `${weather.current.weather_icons[0]}`);\n    this.humidity.innerHTML = `Humidity: ${weather.current.humidity}<span>%</span>`;\n    this.wind.textContent = `Wind: ${weather.current.wind_speed}`;\n    document.getElementById(\"w-temp-f\").style.display = \"none\";\n    document.getElementById(\"toggle\").addEventListener(\"click\", function () {\n      if (document.getElementById(\"switch\").innerHTML === \"Celsius\") {\n        document.getElementById(\"switch\").innerHTML = \"Fahrenheit\";\n        document.getElementById(\"w-temp-c\").style.display = \"none\";\n        document.getElementById(\"w-temp-f\").style.display = \"block\";\n      } else if (document.getElementById(\"switch\").innerHTML === \"Fahrenheit\") {\n        document.getElementById(\"switch\").innerHTML = \"Celsius\";\n        document.getElementById(\"w-temp-f\").style.display = \"none\";\n        document.getElementById(\"w-temp-c\").style.display = \"block\";\n      }\n    });\n  }\n}\n\n\n\n//# sourceURL=webpack:///./src/views.js?");
+
+/***/ }),
+
+/***/ "./src/weather.js":
+/*!************************!*\
+  !*** ./src/weather.js ***!
+  \************************/
+/*! exports provided: Weather */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Weather\", function() { return Weather; });\nclass Weather {\n  constructor(city) {\n    this.apiKey = \"d05c6d708985ea91c4e8f243752d95c0\";\n    this.city = city;\n  }\n\n  // Fetch weather from API\n  async getWeather() {\n    const response = await fetch(\n      `http://api.weatherstack.com/current?access_key=${this.apiKey}&query=${this.city}`\n    );\n\n    const responseData = await response.json();\n\n    return responseData;\n  }\n\n  // Change weather location\n  changeLocation(city) {\n    this.city = city;\n  }\n}\n\n\n\n//# sourceURL=webpack:///./src/weather.js?");
+
+/***/ })
+
+/******/ });
