@@ -6,7 +6,6 @@ class Dom {
     this.tempf = document.getElementById("w-temp-f");
     this.icon = document.getElementById("w-icon");
     this.humidity = document.getElementById("w-humidity");
-    this.wind = document.getElementById("w-wind");
   }
 
   changeToC(celsius) {
@@ -24,7 +23,6 @@ class Dom {
     this.desc.textContent = weather.current.weather_descriptions[0];
     this.icon.setAttribute("src", `${weather.current.weather_icons[0]}`);
     this.humidity.innerHTML = `Humidity: ${weather.current.humidity}<span>%</span>`;
-    this.wind.textContent = `Wind: ${weather.current.wind_speed}`;
     document.getElementById("w-temp-f").style.display = "none";
     document.getElementById("toggle").addEventListener("click", function () {
       if (document.getElementById("switch").innerHTML === "Celsius") {

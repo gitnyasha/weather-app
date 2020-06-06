@@ -4,6 +4,14 @@ import { Dom } from "./views";
 const weather = new Weather("Harare");
 const dom = new Dom();
 
+document.getElementById("w-change-btn").addEventListener("click", (e) => {
+  const city = document.getElementById("city").value;
+
+  weather.changeLocation(city);
+
+  getWeather();
+});
+
 document.addEventListener("DOMContentLoaded", getWeather);
 
 function getWeather() {
