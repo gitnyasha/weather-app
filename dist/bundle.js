@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weather */ \"./src/weather.js\");\n/* harmony import */ var _views__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views */ \"./src/views.js\");\n\n\n\nconst weather = new _weather__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Harare');\nconst dom = new _views__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n\ndocument.addEventListener('DOMContentLoaded', getWeather);\n\nfunction getWeather() {\n  weather.getWeather().then((results) => {\n    dom.show(results);\n  })\n}\n\ndocument.getElementById('w-change-btn').addEventListener('click', (e) => {\n  e.preventDefault();\n  const city = document.getElementById('city').value;\n\n  weather.changeLocation(city);\n\n  document.getElementById('city').value = '';\n\n  getWeather();\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weather */ \"./src/weather.js\");\n/* harmony import */ var _views__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views */ \"./src/views.js\");\n\n\n\nconst weather = new _weather__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Harare');\nconst dom = new _views__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n\ndocument.addEventListener('DOMContentLoaded', getWeather);\n\nfunction getWeather() {\n  weather.getWeather().then((results) => {\n    dom.show(results);\n  });\n}\n\ndocument.getElementById('w-change-btn').addEventListener('click', (e) => {\n  e.preventDefault();\n  const city = document.getElementById('city').value;\n\n  weather.changeLocation(city);\n\n  document.getElementById('city').value = '';\n\n  getWeather();\n});\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -118,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nclass Dom {\n  constructor() 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass Weather {\n  constructor(city) {\n    this.apiKey = 'd05c6d708985ea91c4e8f243752d95c0';\n    this.city = city;\n  }\n\n  async getWeather() {\n    const response = await fetch(\n      `http://api.weatherstack.com/current?access_key=${this.apiKey}&query=${this.city}`\n    );\n\n    const responseData = await response.json();\n\n    return responseData;\n  }\n\n  changeLocation(city) {\n    this.city = city;\n  }\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (Weather);\n\n\n//# sourceURL=webpack:///./src/weather.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nclass Weather {\n  constructor(city) {\n    this.apiKey = 'd05c6d708985ea91c4e8f243752d95c0';\n    this.city = city;\n  }\n\n  async getWeather() {\n    const response = await fetch(\n      `http://api.weatherstack.com/current?access_key=${this.apiKey}&query=${this.city}`,\n    );\n\n    const responseData = await response.json();\n\n    return responseData;\n  }\n\n  changeLocation(city) {\n    this.city = city;\n  }\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (Weather);\n\n\n//# sourceURL=webpack:///./src/weather.js?");
 
 /***/ })
 

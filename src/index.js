@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', getWeather);
 function getWeather() {
   weather.getWeather().then((results) => {
     dom.show(results);
-  })
+  });
 }
 
 document.getElementById('w-change-btn').addEventListener('click', (e) => {
