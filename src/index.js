@@ -4,6 +4,12 @@ import Dom from './views';
 const weather = new Weather('Harare');
 const dom = new Dom();
 
+function getWeather() {
+  weather.getWeather().then((results) => {
+    dom.show(results);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', getWeather);
 
 document.getElementById('w-change-btn').addEventListener('click', (e) => {
@@ -16,9 +22,3 @@ document.getElementById('w-change-btn').addEventListener('click', (e) => {
 
   getWeather();
 });
-
-function getWeather() {
-  weather.getWeather().then((results) => {
-    dom.show(results);
-  });
-}
