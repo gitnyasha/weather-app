@@ -18,4 +18,4 @@ class Weather {
     this.city = city;
   }
 }
-export { Weather };
+export default Weather;

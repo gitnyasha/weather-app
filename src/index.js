@@ -1,5 +1,5 @@
-import { Weather } from './weather';
-import { Dom } from './views';
+import Weather from './weather';
+import Dom from './views';
 
 const weather = new Weather('Harare');
 const dom = new Dom();
@@ -10,7 +10,7 @@ function getWeather() {
   weather.getWeather().then((results) => {
     dom.show(results);
   })
-    .catch((err) => console.log(err));
+    .catch((err));
 }
 
 document.getElementById('w-change-btn').addEventListener('click', (e) => {
