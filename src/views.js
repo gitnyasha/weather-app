@@ -37,4 +37,4 @@ class Dom {
     });
   }
 }
-export { Dom };
+export default Dom;
