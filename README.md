@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-[Live]()
+[Live](https://gitnyasha.github.io/weather-app/)
 
 ## Getting Started
 
