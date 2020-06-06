@@ -6,12 +6,6 @@ const dom = new Dom();
 
 document.addEventListener('DOMContentLoaded', getWeather);
 
-function getWeather() {
-  weather.getWeather().then((results) => {
-    dom.show(results);
-  });
-}
-
 document.getElementById('w-change-btn').addEventListener('click', (e) => {
   e.preventDefault();
   const city = document.getElementById('city').value;
@@ -22,3 +16,9 @@ document.getElementById('w-change-btn').addEventListener('click', (e) => {
 
   getWeather();
 });
+
+function getWeather() {
+  weather.getWeather().then((results) => {
+    dom.show(results);
+  });
+}
