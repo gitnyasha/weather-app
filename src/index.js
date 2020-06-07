@@ -6,9 +6,7 @@ const dom = new Dom();
 
 function getWeather() {
   weather.getWeather().then((results) => {
-    console.log(results);
     dom.show(results);
-
   });
 }
 
