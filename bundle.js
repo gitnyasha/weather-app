@@ -38,9 +38,9 @@
   /******/ /******/ __webpack_require__.d = function (exports, name, getter) {
     /******/ if (!__webpack_require__.o(exports, name)) {
       /******/ Object.defineProperty(exports, name, {
-        enumerable: true,
-        get: getter,
-      });
+    enumerable: true,
+    get: getter,
+  });
       /******/
     }
     /******/
@@ -49,8 +49,8 @@
   /******/ /******/ __webpack_require__.r = function (exports) {
     /******/ if (typeof Symbol !== "undefined" && Symbol.toStringTag) {
       /******/ Object.defineProperty(exports, Symbol.toStringTag, {
-        value: "Module",
-      });
+    value: "Module",
+  });
       /******/
     }
     /******/ Object.defineProperty(exports, "__esModule", { value: true });
@@ -73,9 +73,9 @@
     /******/ var ns = Object.create(null);
     /******/ __webpack_require__.r(ns);
     /******/ Object.defineProperty(ns, "default", {
-      enumerable: true,
-      value: value,
-    });
+        enumerable: true,
+        value: value,
+      });
     /******/ if (mode & 2 && typeof value != "string")
       for (var key in value)
         __webpack_require__.d(
@@ -93,11 +93,11 @@
     /******/ var getter =
       module && module.__esModule
         ? /******/ function getDefault() {
-            return module["default"];
-          }
+          return module["default"];
+        }
         : /******/ function getModuleExports() {
-            return module;
-          };
+          return module;
+        };
     /******/ __webpack_require__.d(getter, "a", getter);
     /******/ return getter;
     /******/
@@ -139,7 +139,7 @@
       /***/ function (module, __webpack_exports__, __webpack_require__) {
         "use strict";
         eval(
-          "__webpack_require__.r(__webpack_exports__);\nclass Dom {\n  constructor() {\n    this.location = document.getElementById('w-location');\n    this.desc = document.getElementById('w-desc');\n    this.tempc = document.getElementById('w-temp-c');\n    this.tempf = document.getElementById('w-temp-f');\n    this.icon = document.getElementById('w-icon');\n    this.humidity = document.getElementById('w-humidity');\n  }\n\n  show(weather) {\n    this.location.textContent = weather.location.name;\n    this.tempc.innerHTML = `${Math.floor(weather.current.temperature)}&deg`;\n    this.tempf.innerHTML = `${Math.floor((weather.current.temperature * 9) / 5 + 32)}&deg`;\n    this.desc.innerHTML = `${weather.current.weather_descriptions[0]}`;\n    this.icon.setAttribute('src', `${weather.current.weather_icons[0]}`);\n    this.humidity.innerHTML = `Humidity: ${weather.current.humidity}<span>%</span>`;\n    document.getElementById('w-temp-f').style.display = 'none';\n    document.getElementById('toggle').addEventListener('click', () => {\n      if (document.getElementById('switch').innerHTML === 'Celsius') {\n        document.getElementById('switch').innerHTML = 'Fahrenheit';\n        document.getElementById('w-temp-c').style.display = 'none';\n        document.getElementById('w-temp-f').style.display = 'block';\n      } else if (document.getElementById('switch').innerHTML === 'Fahrenheit') {\n        document.getElementById('switch').innerHTML = 'Celsius';\n        document.getElementById('w-temp-f').style.display = 'none';\n        document.getElementById('w-temp-c').style.display = 'block';\n      }\n    });\n  }\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (Dom);\n\n\n//# sourceURL=webpack:///./src/views.js?"
+          "__webpack_require__.r(__webpack_exports__);\nclass Dom {\n  constructor() {\n    this.location = document.getElementById('w-location');\n    this.desc = document.getElementById('w-desc');\n    this.tempc = document.getElementById('w-temp-c');\n    this.tempf = document.getElementById('w-temp-f');\n    this.icon = document.getElementById('w-icon');\n    this.humidity = document.getElementById('w-humidity');\n  }\n\n  show(weather) {\n    this.location.innerHTML = `${weather.location.name}`;\n    this.tempc.innerHTML = `${Math.floor(weather.current.temperature)}&deg`;\n    this.tempf.innerHTML = `${Math.floor((weather.current.temperature * 9) / 5 + 32)}&deg`;\n    this.desc.innerHTML = `${weather.current.weather_descriptions[0]}`;\n    this.icon.setAttribute('src', `${weather.current.weather_icons[0]}`);\n    this.humidity.innerHTML = `Humidity: ${weather.current.humidity}<span>%</span>`;\n    document.getElementById('w-temp-f').style.display = 'none';\n    document.getElementById('toggle').addEventListener('click', () => {\n      if (document.getElementById('switch').innerHTML === 'Celsius') {\n        document.getElementById('switch').innerHTML = 'Fahrenheit';\n        document.getElementById('w-temp-c').style.display = 'none';\n        document.getElementById('w-temp-f').style.display = 'block';\n      } else if (document.getElementById('switch').innerHTML === 'Fahrenheit') {\n        document.getElementById('switch').innerHTML = 'Celsius';\n        document.getElementById('w-temp-f').style.display = 'none';\n        document.getElementById('w-temp-c').style.display = 'block';\n      }\n    });\n  }\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (Dom);\n\n\n//# sourceURL=webpack:///./src/views.js?"
         );
 
         /***/
