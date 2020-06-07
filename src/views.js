@@ -9,7 +9,7 @@ class Dom {
   }
 
   show(weather) {
-    this.location.textContent = weather.location.name;
+    this.location.innerHTML = `${weather.location.name}`;
     this.tempc.innerHTML = `${Math.floor(weather.current.temperature)}&deg`;
     this.tempf.innerHTML = `${Math.floor((weather.current.temperature * 9) / 5 + 32)}&deg`;
     this.desc.innerHTML = `${weather.current.weather_descriptions[0]}`;
