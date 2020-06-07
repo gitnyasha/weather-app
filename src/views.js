@@ -1,6 +1,6 @@
 class Dom {
   constructor() {
-    this.location = document.getElementById('w-location');
+    this.locate = document.getElementById('w-location');
     this.desc = document.getElementById('w-desc');
     this.tempc = document.getElementById('w-temp-c');
     this.tempf = document.getElementById('w-temp-f');
@@ -9,12 +9,12 @@ class Dom {
   }
 
   show(weather) {
-    this.location.innerHTML = `${weather.location.name}`;
-    this.tempc.innerHTML = `${Math.floor(weather.current.temperature)}&deg`;
-    this.tempf.innerHTML = `${Math.floor((weather.current.temperature * 9) / 5 + 32)}&deg`;
-    this.desc.innerHTML = `${weather.current.weather_descriptions[0]}`;
-    this.icon.setAttribute('src', `${weather.current.weather_icons[0]}`);
-    this.humidity.innerHTML = `Humidity: ${weather.current.humidity}<span>%</span>`;
+    this.locate.innerHTML = `${weather.name}`;
+    this.tempc.innerHTML = `${Math.floor(weather.main.temp - 273.15)}&deg`;
+    this.tempf.innerHTML = `${Math.floor((weather.main.temp - 273.15) * 9 / 5 + 32)}&deg`;
+    this.desc.innerHTML = `${weather.weather[0].description}`;
+    this.icon.setAttribute('class', `${weather.weather[0].icon}`);
+    this.humidity.innerHTML = `Humidity: ${weather.main.humidity}<span>%</span>`;
     document.getElementById('w-temp-f').style.display = 'none';
     document.getElementById('toggle').addEventListener('click', () => {
       if (document.getElementById('switch').innerHTML === 'Celsius') {
