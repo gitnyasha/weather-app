@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-[Live](https://gitnyasha.github.io/weather-app/)
+[Live](https://quirky-lumiere-341378.netlify.app/)
 
 ## Getting Started
 
