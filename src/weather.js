@@ -5,15 +5,9 @@ class Weather {
   }
 
   async getWeather() {
-    if (location.protocol === "http:") {
-      const response = await fetch(
-        `http://api.weatherstack.com/current?access_key=${this.apiKey}&query=${this.city}`
-      );
-    } else {
-      const response = await fetch(
-        `https://api.weatherstack.com/current?access_key=${this.apiKey}&query=${this.city}`
-      );
-    }
+    const response = await fetch(
+      `https://api.weatherstack.com/current?access_key=${this.apiKey}&query=${this.city}`
+    );
     const responseData = await response.json();
 
     return responseData;
