@@ -118,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nclass Dom {\n  constructor() 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass Weather {\n  constructor(city) {\n    this.apiKey = 'f374063fac3fb5e66f52e39195a343bd';\n    this.city = city;\n  }\n\n  async getWeather() {\n    const response = await fetch(\n      `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}`\n    );\n    const responseData = await response.json();\n\n    return responseData;\n  }\n\n  changeLocation(city) {\n    this.city = city;\n  }\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (Weather);\n\n\n//# sourceURL=webpack:///./src/weather.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nclass Weather {\n  constructor(city) {\n    this.apiKey = 'f374063fac3fb5e66f52e39195a343bd';\n    this.city = city;\n  }\n\n  async getWeather() {\n    const response = await fetch(\n      `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}`,\n    );\n    const responseData = await response.json();\n\n    return responseData;\n  }\n\n  changeLocation(city) {\n    this.city = city;\n  }\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (Weather);\n\n\n//# sourceURL=webpack:///./src/weather.js?");
 
 /***/ })
 
