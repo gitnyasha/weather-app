@@ -13,7 +13,7 @@ class Dom {
     this.tempc.innerHTML = `${Math.floor(weather.main.temp - 273.15)}&deg`;
     this.tempf.innerHTML = `${Math.floor((weather.main.temp - 273.15) * 9 / 5 + 32)}&deg`;
     this.desc.innerHTML = `${weather.weather[0].description}`;
-    this.icon.setAttribute('class', `${weather.weather[0].icon}`);
+    this.icon.setAttribute('src', `https://openweathermap.org/img/w/${weather.weather[0].icon}.png`);
     this.humidity.innerHTML = `Humidity: ${weather.main.humidity}<span>%</span>`;
     document.getElementById('w-temp-f').style.display = 'none';
     document.getElementById('toggle').addEventListener('click', () => {

@@ -19,7 +19,7 @@
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" id="city" type="text" placeholder="Search city...."
                 kl_vkbd_parsed="true">
-            <button class="btn btn-secondary my-2 my-sm-0" id="w-change-btn" type="button">Search</button>
+            <button class="btn btn-secondary my-2 my-sm-0" id="w-change-btn" type="submit">Search</button>
         </form>
         </div>
     </nav>
@@ -34,12 +34,13 @@
                     <div class="card-body">
                         <h4 class="card-title" id="w-location"></h4>
                         <p>
-                            <span id="w-temp-c"></span>
                             <span id="w-temp-f"></span>
+                            <span id="w-temp-c"></span>
+
                             <span id="switch">Celsius</span>
                         </p>
                         <p class="card-text w-desc" id="w-desc"></p>
-                        <p id="w-icon"></p>
+                        <img id="w-icon" />
                         <ul id="w-details" class="list-group mt-3">
                             <li class="list-group-item" id="w-humidity"></li>
                         </ul>
