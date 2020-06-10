@@ -14,7 +14,7 @@ class Dom {
     this.icon.setAttribute('src', `https://openweathermap.org/img/w/${weather.weather[0].icon}.png`);
     this.humidity.innerHTML = `Humidity: ${weather.main.humidity}<span>%</span>`;
     document.getElementById('toggle').addEventListener('click', () => {
-      this.temp.innerHTML = `${Math.floor((weather.main.temp - 273.15) * 9 / 5 + 32)}&deg F`;
+      this.temp.innerHTML = `${Math.floor(((weather.main.temp - 273.15) * 1.8) + 32)}&deg F`;
     });
     document.getElementById('togglef').addEventListener('click', () => {
       this.temp.innerHTML = `${Math.floor(weather.main.temp - 273.15)}&deg C`;
