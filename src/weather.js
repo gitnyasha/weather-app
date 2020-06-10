@@ -17,4 +17,5 @@ class Weather {
     this.city = city;
   }
 }
+
 export default Weather;

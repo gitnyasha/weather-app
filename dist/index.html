@@ -17,8 +17,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="city" type="text" placeholder="Search city...."
-                kl_vkbd_parsed="true">
+            <input class="form-control mr-sm-2" id="city" type="text" placeholder="Search city....">
             <button class="btn btn-secondary my-2 my-sm-0" id="w-change-btn" type="submit">Search</button>
         </form>
         </div>
@@ -29,15 +28,14 @@
             <div class="col-md-8">
 
                 <div class="card border-primary mb-3" style="max-width: 20rem;">
-                    <div class="card-header">Change <button type="submit" id="toggle" class="btn btn-info">Celsius /
-                            Fahrenheit</button></div>
+                    <div class="card-header">Change
+                        <button type="submit" id="toggle" class="btn btn-info">F</button>
+                        <button type="submit" id="togglef" class="btn btn-info">C</button>
+                    </div>
                     <div class="card-body">
                         <h4 class="card-title" id="w-location"></h4>
                         <p>
-                            <span id="w-temp-f"></span>
                             <span id="w-temp-c"></span>
-
-                            <span id="switch">Celsius</span>
                         </p>
                         <p class="card-text w-desc" id="w-desc"></p>
                         <img id="w-icon" />
